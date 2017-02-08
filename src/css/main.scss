@@ -9,5 +9,85 @@
 
 .element-atom,
 .interactive-atom {
-    margin: 0 !important;
+  margin: 0 !important;
+}
+
+ul.timeline {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 0; /* reset webkiet-padding-start which default to 40 */
+}
+
+li {
+  flex-basis: 100%;
+}
+
+li .timestamp {
+  text-align: center;
+  color: #535c63;
+  font-size: 0.85em;
+}
+
+li.year .timestamp {
+  font-size: 1em;
+}
+
+.status {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  border-top: 2px solid #D6DCE0;
+}
+
+.status:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.status.active:before {
+  background-color: red;
+}
+
+li.year .status:before {
+  width: 0px;
+}
+
+.card {
+  display: none;
+  margin: 3%;
+  background: white;
+  border-bottom: 3px solid #ddd;
+  border-right: 3px solid #ddd;
+}
+
+.card.active {
+    display: block;
+}
+
+.card .header{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white; 
+    background-color: #00507f; /* one of guardian blue */
+    padding: 3%;
+}
+
+.card .inside{
+    padding: 3%;
+    color: #7f8c97; /* nice grey */
+}
+
+.card h2{
+    font-size: 1em;
+    font-style: bold;
+    color: #535c63; /* between black and nice grey */ 
 }
