@@ -1,5 +1,11 @@
 import mainTemplate from './src/templates/main.html!text'
 
+import Handlebars from 'handlebars/dist/cjs/handlebars'
+
 export async function render() {
-    return mainTemplate;
+
+    const template = Handlebars.compile(mainTemplate);
+    //TODO retrieve the data from spreadsheet of put it there for experimentation
+    const data = {};
+    return template(data);
 }

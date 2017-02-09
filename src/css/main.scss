@@ -12,6 +12,15 @@
   margin: 0 !important;
 }
 
+
+$guardian-blue: #00507f;
+
+$grey-for-text: #7f8c97;
+
+$grey-border: #ddd;
+
+$grey-black: #535c63;
+
 ul.timeline {
   list-style-type: none;
   display: flex;
@@ -26,7 +35,7 @@ li {
 
 li .timestamp {
   text-align: center;
-  color: #535c63;
+  color: $grey-black;
   font-size: 0.85em;
 }
 
@@ -38,7 +47,7 @@ li.year .timestamp {
   display: flex;
   position: relative;
   justify-content: center;
-  border-top: 2px solid #D6DCE0;
+  border-top: 2px solid $grey-border;
 }
 
 .status:before {
@@ -50,11 +59,15 @@ li.year .timestamp {
   height: 10px;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid $grey-border;
+}
+
+.status.hover:before {
+  background-color: red;
 }
 
 .status.active:before {
-  background-color: red;
+  background-color: $guardian-blue;
 }
 
 li.year .status:before {
@@ -65,29 +78,29 @@ li.year .status:before {
   display: none;
   margin: 3%;
   background: white;
-  border-bottom: 3px solid #ddd;
-  border-right: 3px solid #ddd;
+  border-bottom: 3px solid $grey-border;
+  border-right: 3px solid $grey-border;
 }
 
 .card.active {
-    display: block;
+  display: block;
 }
 
 .card .header{
-    font-size: 1.1em;
-    font-weight: bold;
-    color: white; 
-    background-color: #00507f; /* one of guardian blue */
-    padding: 3%;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white; 
+  background-color: $guardian-blue;
+  padding: 3%;
 }
 
 .card .inside{
-    padding: 3%;
-    color: #7f8c97; /* nice grey */
+  padding: 3%;
+  color: $grey-for-text;
 }
 
 .card h2{
-    font-size: 1em;
-    font-style: bold;
-    color: #535c63; /* between black and nice grey */ 
+  font-size: 1em;
+  font-style: bold;
+  color: #535c63; /* between black and nice grey */ 
 }
