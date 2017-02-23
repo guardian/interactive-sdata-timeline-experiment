@@ -14,12 +14,43 @@
 
 
 $guardian-blue: #00507f;
+$guardian-orange: #e6711b;
 
 $grey-for-text: #7f8c97;
 
 $grey-border: #ddd;
 
 $grey-black: #535c63;
+
+$violet: #951c55;
+$light-violet: #b82266;
+
+html {
+    overflow-y: scroll; /* if the height computed is not enough allow to scroll */
+}
+
+body {
+    background-color: #fff;
+    border-bottom: 10px solid $violet;
+}
+
+#header h2 {
+    background-color: $violet;
+    margin: 0;
+    padding: 3%;
+    font-weight: 200;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+#header {
+    background-color: $light-violet;
+    padding-bottom: 2%;
+}
+
+#main {
+    
+}
 
 ul.timeline {
   list-style-type: none;
@@ -40,7 +71,7 @@ li .timestamp {
 }
 
 li.year .timestamp {
-  font-size: 1em;
+  font-size: 0.75em;
 }
 
 .status {
@@ -55,28 +86,55 @@ li.year .timestamp {
   position: absolute;
   top: -5px;
   left: 50%;
-  width: 10px;
+  width: 0px;
   height: 10px;
-  background-color: white;
-  border-radius: 10px;
+  background-color: $grey-border;
   border: 1px solid $grey-border;
-}
-
-.status.hover:before {
-  background-color: red;
-}
-
-.status.active:before {
-  background-color: $guardian-blue;
+  border-radius: 10px;
 }
 
 li.year .status:before {
-  width: 0px;
+  width: 10px;
+}
+
+.status.hover:before {
+  background-color: $guardian-orange;
+  border-color: $guardian-orange;
+  border-radius: 0px;
+  width: 2px;
+  height: 12px;
+  cursor:pointer;
+}
+
+/* reset as not clickable */
+
+li.year .status.hover:before {
+  background-color: $grey-border; 
+  border-color: $grey-border;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  cursor: auto;
+}
+
+
+.status.active:before {
+  top: -5px;
+  left: 50%;
+  width: 4px;
+  height: 2.5em;
+  background-color: $guardian-blue;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.status.active.hover:before {
+  background-color: $guardian-blue; /* reset */
 }
 
 .card {
   display: none;
-  margin: 3%;
+  margin: 4%;
   background: white;
   border-bottom: 3px solid $grey-border;
   border-right: 3px solid $grey-border;
@@ -87,16 +145,22 @@ li.year .status:before {
 }
 
 .card .header{
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: bold;
   color: white; 
   background-color: $guardian-blue;
-  padding: 3%;
+  letter-spacing: 0.05em;
+  padding: 2%;
 }
 
 .card .inside{
-  padding: 3%;
+  padding: 2%;
   color: $grey-for-text;
+  border: 1px solid $grey-border;
+}
+
+.card .inside p {
+  font-size: 0.9em;
 }
 
 .card h2{
@@ -104,3 +168,21 @@ li.year .status:before {
   font-style: bold;
   color: #535c63; /* between black and nice grey */ 
 }
+
+.card li.articles {
+  font-size: 0.9em;
+}
+
+.card li.articles a {
+    text-decoration: none !important;
+    border-bottom: 0.0625rem solid #dcdcdc;
+    -webkit-transition: border-color .15s ease-out;
+    transition: border-color .15s ease-out;
+    color: #005689;
+    cursor: pointer;
+}
+
+
+
+
+

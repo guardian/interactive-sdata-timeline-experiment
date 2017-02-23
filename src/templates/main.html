@@ -1,36 +1,40 @@
+<div id="header"> <h2>What is this story context?</h2> </div>
+<div id="main">
 <ul class="timeline" id="timeline">
-   {{#each timestamp}}
+   {{#each events}}
     <li {{#if isYear}} class="li year" {{else}} class="li" {{/if}}>
       <div class="timestamp">
-       <span class="date">{{value}}<span>
+       <span class="date">{{when}}<span>
       </div>
       {{#if isYear}}
         <div class="status year"></div>
       {{else}}
-        <div class="status" id="status-{{@index}}"></div>
+        <div {{#if isActive}} class="status active" {{else}} class="status" {{/if}} id="status-{{@index}}"></div>
       {{/if}}
     </li>
    {{/each}}
  </ul>
 
 
- {{#each timestamp}}
+ {{#each events}}
  {{#unless isYear}}
+
 <div {{#if isActive}} class="card active" {{else}} class="card" {{/if}} data-id="status-{{@index}}" >
-<div class="header" >
-Discovery that 90% of staff are on zero hour contracts
-</div>
+<div class="header" > {{title}} </div>
 <div class="inside">
-<h2> Who was involved?</h2>
+<h2>Who was involved?</h2>
 
-<p>Mike Ashley, Labour Party, The Guardian </p>
+<p> {{who}}</p>
 
-<h2> Related articles </h2>
+<h2>Related articles</h2>
 <ul>
-    <li><a href="https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal" target="_top"> Sports Direct auditor under investigation over company's family deal </a></li>
-    <li><a href=""> plop </a></li>
+    {{#each articles}}
+    <li class="articles"><a href="{{link}}" target="_top"> {{title}} </a></li>
+     {{/each}}
 </ul>
 </div>
 </div>
  {{/unless}}
  {{/each}}
+
+ </div>
