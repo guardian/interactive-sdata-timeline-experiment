@@ -26,11 +26,17 @@
 
 <p> {{who}}</p>
 
-<h2>Related articles</h2>
+<h2>Find out more</h2>
 <ul>
     {{#each articles}}
-    <li class="articles"> {{when}} - <a href="{{link}}" target="_top">  {{title}} </a></li>
-     {{/each}}
+        <li class="category"> {{category}}
+        <ul>
+            {{#each data}}
+            <li class="articles"> {{when}} - <a href="{{link}}" target="_top">  {{title}} </a></li>
+            {{/each}}
+        </ul>
+        </li>
+    {{/each}}
 </ul>
 </div>
 </div>
