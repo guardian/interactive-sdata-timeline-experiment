@@ -16,11 +16,9 @@ export async function render() {
                 who: ['Mike Ashley', 'Labour Party', 'The Guardian'],
                 options: [],
                 articles: [
-                    {title: 'Sports Direct auditor under investigation over company\'s family deal', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal'},
-                    {title: 'Sports Direct auditor under investigation over company\'s family deal', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal'},
-                    {title: 'Sports Direct auditor under investigation over company\'s family deal', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal'},
-                    {title: 'Sports Direct auditor under investigation over company\'s family deal', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal'},
-                    {title: 'Sports Direct auditor under investigation over company\'s family deal', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal'}
+                    {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
+                    {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
+                    {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'}
                 ]
             },
             { when: 'August'},
