@@ -1,4 +1,4 @@
-<div id="header"> <h2>What is this story context?</h2> </div>
+<div id="header"> <h2>What has happened so far?</h2> </div>
 <div id="main">
 <ul class="timeline" id="timeline">
    {{#each events}}
@@ -22,6 +22,11 @@
 <div {{#if isActive}} class="card active" {{else}} class="card" {{/if}} data-id="status-{{@index}}" >
 <div class="header" > {{title}} </div>
 <div class="inside">
+
+<h2>Summary</h2>
+
+<p>{{summary}}</p>
+
 <h2>Who was involved?</h2>
 
 <p> {{who}}</p>

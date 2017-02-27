@@ -13,31 +13,26 @@ export async function render() {
                 when: 'July',
                 isActive: true,
                 title: 'Discovery that 90% of staff are on zero hour contracts',
+                summary: 'Sports Direct\'s entire 20,000 part-time workforce are employed on zero-hour contracts at a time when 2,000 full-time staff are about to cash in bonuses of up to £100,000.',
                 who: ['Mike Ashley', 'Labour Party', 'The Guardian'],
                 options: [],
                 articles:[
                     {
                     category: "News",
                     data: [
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'}
+                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2013/jul/28/sports-direct-staff-zero-hour-contracts', when: '28/07'}
                      ]
                     },
                     {
                     category: "Analysis",
                     data: [
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'}
+                        {title: 'Sports Direct\'s zero-hours contracts may, unfortunately, be here to stay', link: 'https://www.theguardian.com/business/2013/jul/29/sports-direct-zero-hours-contracts-ashley', when: '29/07'}
                      ]
                     },
                     {
                     category: "Opinions",
                     data: [
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'},
-                        {title: 'Sports Direct auditor under investigation', link: 'https://www.theguardian.com/business/2016/nov/28/sports-direct-auditor-under-investigation-over-companys-family-deal', when: '28/10'}
+                        {title: 'Working at Sports Direct is no fairytale for part-timers', link: 'https://www.theguardian.com/commentisfree/2013/jul/29/sports-direct-part-timers-no-bonuses', when: '29/07'}
                      ]
                     }
                 ]
