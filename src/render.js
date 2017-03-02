@@ -7,11 +7,9 @@ export async function render() {
     const template = Handlebars.compile(mainTemplate);
     //TODO retrieve the data from spreadsheet of put it there for experimentation
     const data = {
-        years: [ {name:'2013', isActive: true} , {name:'2014'}, {name:'2015'}, {name:'2016'} ],
         events: [
-            { when: '2013', isYear: true},
             { 
-                when: 'Jul.',
+                when: { month: 'Jul', year: '2013'},
                 isActive: true,
                 title: 'Discovery that 90% of staff are on zero hour contracts',
                 summary: 'Sports Direct\'s entire 20,000 part-time workforce are employed on zero-hour contracts at a time when 2,000 full-time staff are about to cash in bonuses of up to £100,000.',
@@ -37,7 +35,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Aug.',
+            { 
+              when: { month: 'Aug', year: '2013'},
               title: 'Labour party summit on zero hour contracts',
               summary: 'Workers on zero-hours contracts are being paid £6 an hour less on average than other employees, says Labour. Chuka Umunna, the shadow business secretary, will say wages for workers hired on the controversial terms are 40% lower than for those on typical contracts, as the party holds a "zero-hours summit" in London with major employers and unions.',
               who: ['Chuka Umanna', 'Labour Party'],
@@ -57,8 +56,8 @@ export async function render() {
                 ]
 
             },
-            { when: '2014', isYear: true},
-            { when: 'Jul.',
+            { 
+              when: { month: 'Jul', year: '2014'},
               title: 'Mike Ashley bonus approved',
               summary: 'This represents the end of a two year fight to secure a huge bump in share % for the founder Mike Ashley.',
               who: ['Mike Ashley'],
@@ -72,7 +71,8 @@ export async function render() {
                 ]
 
             },
-            { when: 'Nov.',
+            { 
+              when: { month: 'Nov', year: '2014'},
               title: 'Labour party publically attack Sports Direct',
               summary: 'Ed Miliband launched an attack on what he calls the “Victorian” working practices of the retail giant Sports Direct over its use of zero-hours contracts.',
               who: ['Ed Milliband', 'Labour Party'],
@@ -92,8 +92,8 @@ export async function render() {
                 ]
 
             },
-            { when: '2015', isYear: true},
-            { when: 'Feb.',
+            { 
+              when: { month: 'Feb', year: '2015'},
               title: 'Mike Ashley called to Westminster',
               summary: 'The Sports Direct founder Mike Ashley is being called before MPs at the House of Commons over the treatment of employees at the company’s USC retail business and the use of zero-hours contracts.',
               who: ['Mike Ashley'],
@@ -106,7 +106,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Mar.',
+            { 
+              when: { month: 'Mar', year: '2015'},
               title: 'Mike Ashley refuses to attend',
               summary: 'The Sports Direct founder Mike Ashley has rebuffed MPs who wanted to grill him over the treatment of staff at the company’s USC retail business in Scotland and the use of zero-hours contracts. The billionaire told MPs it was more appropriate that chief executive David Foley attend the Scottish Affairs committee, which is conducting an investigation into how the business collapsed without any obligations to its staff.',
               who: ['Mike Ashley', 'David Forsey', 'Labour Party'],
@@ -119,7 +120,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Sep.',
+            { 
+              when: { month: 'Sep', year: '2015'},
               title: 'Unite Union protest "disckenian practices"',
               summary: 'Sports Direct has insisted it is “not operating Dickensian practices”, in the face of growing shareholder unrest at Mike Ashley’s sportswear retailer.The company, which has gained notoriety for keeping 20,000 staff on zero-hours contracts and making Ashley a billionaire, robustly defended its treatment of workers at its annual shareholder meeting after strong criticism from activist investor groups.',
               who: ['Unite'],
@@ -138,7 +140,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Oct.',
+            { 
+              when: { month: 'Oct', year: '2015'},
               title: 'BBC reveal ambulances called to warehouse 80 times in two years',
               summary: 'Ambulances were called to Sports Direct International’s headquarters more than 80 times in two years, according to a report. From January 2013 to December 2014, 76 ambulances or paramedic cars were sent to the postcode for Sports Direct’s distribution centre, according to a Freedom of Information request by the BBC. Another seven ambulance calls were cancelled, the BBC said.',
               who: ['BBC'],
@@ -151,7 +154,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Oct.',
+            { 
+              when: { month: 'Oct', year: '2015'},
               title: 'David Forsey charged over Ayreshite redundancies',
               summary: 'David Forsey, the chief executive of Sports Direct, has been charged with a criminal offence relating to the collapse of its fashion retailer USC.',
               who: ['David Forsey'],
@@ -164,7 +168,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Dec.',
+            { 
+              when: { month: 'Dec', year: '2015'},
               title: 'Guardian investigation reveals workers effectively paid lower than minimum wage',
               summary: 'By placing two undercover reporters inside Sports Direct&rsquo;s warehouse, as well as interviewing former employees and speaking with workers about their roles while the journalists were employed on the site, the Guardian has established that many workers are in effect receiving less than the minimum wage per hour, over the total time they are required to spend in the warehouse and after financial penalties.',
               who: ['The Guardian'],
@@ -190,7 +195,8 @@ export async function render() {
                     }
                 ]
             },
-            { when: 'Dec.',
+            { 
+              when: { month: 'Dec', year: '2015'},
               title: 'Sports direct issue a review of staff conditions',
               summary: 'Sports Direct is to launch a review of all agency staff terms and conditions, which it said would be overseen personally by its founder Mike Ashley. The move follows a Guardian investigation, which revealed how temporary warehouse workers at Britain’s biggest sportswear chain are subjected to an extraordinary regime of searches and surveillance. Undercover reporters also came up with evidence that thousands of workers were receiving effective hourly rates of pay below the minimum wage.',
               who: ['Sports Direct', 'Mike Ashley'],
@@ -208,9 +214,52 @@ export async function render() {
                      ]
                     }
                 ]
-            },
-            { when: '2016', isYear: true}
+            }
         ]
     };
+
+    var id = 0;
+
+    data.events.map(event => {event.id = id++});
+    data.events.map(event => {event.when.quarter = quarter(event.when.month) });
+
+    const eventsByYear = data.events.reduce((acc, event) => {
+      const year = event.when.year;
+      acc[year] = acc[year] || [];
+      acc[year].push(event);
+      return acc;
+    }, {});
+
+    const years = [];
+    for (var year in eventsByYear) {
+        years.push({ name: year, events: eventsByYear[year] });
+    }
+
+    years[0].isActive = true;
+
+    data.years = years;
+
     return template(data);
+}
+
+
+function quarter(month) {
+    switch (month) {
+        case 'Jan':
+        case 'Feb':
+        case 'Mar':
+            return 'Q1';
+        case 'Apr':
+        case 'May':
+        case 'Jun':
+            return 'Q2';
+        case 'Jul':
+        case 'Aug':
+        case 'Sep':
+            return 'Q3';
+        case 'Oct':
+        case 'Nov':
+        case 'Dec':
+            return 'Q4';
+    }
 }

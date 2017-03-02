@@ -1,25 +1,41 @@
 <div id="header"> <h2>What has happened so far?</h2> </div>
 <div id="main">
-<ul class="timeline" id="timeline">
-   {{#each events}}
-    <li {{#if isYear}} class="li year" {{else}} class="li" {{/if}}>
-      <div class="timestamp">
-       <span class="date">{{when}}<span>
+
+<div id="timeline2">
+   {{#each years}}
+    <div {{#if isActive}} class="t-year active" {{else}} class="t-year" {{/if}}>
+      <div class="quarters-header">
+      <div class="name"> <p>{{name}}</p> </div>
+      <div class="quarters">
+      <div {{#if isActive}} class="t-quarter active" {{else}} class="t-quarter" {{/if}} data-quarter="Q1">
+        <p>Q1</p>
       </div>
-      {{#if isYear}}
-        <div class="status year"></div>
-      {{else}}
-        <div {{#if isActive}} class="status active" {{else}} class="status" {{/if}} id="status-{{@index}}"></div>
-      {{/if}}
-    </li>
+      <div class="t-quarter" data-quarter="Q2">
+        <p>Q2</p>
+      </div>
+      <div class="t-quarter" data-quarter="Q3">
+        <p>Q3</p>
+      </div>
+      <div class="t-quarter" data-quarter="Q4">
+        <p>Q4</p>
+      </div>
+      </div>
+      </div>
+      <div class="events">
+         {{#each events}}
+         {{#if true}}
+             <div class="event" data-quarter="{{when.quarter}}"> <span class="title" id="{{id}}">• {{title}}</span></div>
+         {{/if}}
+         {{/each}}
+     </div>
+    </div>
    {{/each}}
- </ul>
+ </div>
 
 
  {{#each events}}
- {{#unless isYear}}
 
-<div {{#if isActive}} class="card active" {{else}} class="card" {{/if}} data-id="status-{{@index}}" >
+<div {{#if isActive}} class="card active" {{else}} class="card" {{/if}} data-id="{{id}}" >
 <div class="header" > {{title}} </div>
 <div class="inside">
 
@@ -45,7 +61,7 @@
 </ul>
 </div>
 </div>
- {{/unless}}
- {{/each}}
+
+{{/each}}
 
  </div>

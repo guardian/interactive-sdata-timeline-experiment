@@ -1,14 +1,57 @@
 const $ = (el, s) => el.querySelector(s);
 const $$ = (el, s) => [].slice.apply(el.querySelectorAll(s));
 
+const parentWith = (element, cssClass) => {
+    return element.classList.contains(cssClass) ? element : parentWith(element.parentNode, cssClass);
+};
 
-$$(document, 'ul.timeline li .status:not(.year)').forEach(statusElement => {
-    statusElement.addEventListener('mouseover', (event) => { event.target.classList.add('hover')});
-    
-    statusElement.addEventListener('mouseout', (event) => { event.target.classList.remove('hover')});
 
-    statusElement.addEventListener('click', (event) => { 
-        const previous = $(document, 'ul.timeline li .status.active');
+$$(document, '#timeline2 .t-year').forEach(element => {
+    element.addEventListener('click', (event) => { 
+        const previous = $(document, '#timeline2 .t-year.active');
+        
+        if(previous === null)
+            return;
+
+        const newone = parentWith(event.target, 't-year');
+
+        if(previous !== newone) {
+            previous.classList.remove('active');
+            newone.classList.add('active');
+            const quarter = $$(document, '.t-year.active .t-quarter')[0];
+            /* check cross-browsers click */
+            quarter.click();
+        }
+    });
+});
+
+$$(document, '#timeline2 .t-quarter').forEach(element => {
+    element.addEventListener('click', (event) => { 
+        const previous = $(document, '#timeline2 .t-quarter.active');
+        
+        if(previous === null)
+            return;
+
+        const newone = parentWith(event.target, 't-quarter');
+
+        if(previous !== newone) {
+            previous.classList.remove('active');
+            newone.classList.add('active');
+        }
+
+        const previousEvents = $$(document, '.event.active');
+        previousEvents.forEach(e => { e.classList.remove('active'); });
+
+        const newEvents = $$(document, ".event[data-quarter='" + newone.getAttribute('data-quarter') + "']");
+        newEvents.forEach(e => { e.classList.add('active'); });
+
+    });
+});
+
+
+$$(document, '#timeline2 span.title').forEach(element => {
+    element.addEventListener('click', (event) => { 
+        const previous = $(document, '#timeline2 span.title.active');
         if (previous !== null)
             previous.classList.remove('active');
         event.target.classList.add('active');
@@ -22,5 +65,4 @@ $$(document, 'ul.timeline li .status:not(.year)').forEach(statusElement => {
             newCard.classList.add('active');
 
     });
-
 });

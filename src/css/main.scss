@@ -52,84 +52,108 @@ body {
     
 }
 
-ul.timeline {
-  list-style-type: none;
+#timeline2 {
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  padding-left: 0; /* reset webkiet-padding-start which default to 40 */
+  border-bottom: 2px solid $grey-border;
+  border-right: 2px solid $grey-border;
 }
 
-li {
-  flex-basis: 100%;
-}
-
-li .timestamp {
+#timeline2 .t-year {
+  flex-basis: 50%;
   text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-left: 2px solid $grey-border;
   color: $grey-black;
-  font-size: 0.85em;
 }
 
-li.year .timestamp {
-  font-size: 0.75em;
+#timeline2 .t-year.active {
+  flex-basis: 200%;
+  color: $violet;
 }
 
-.status {
+
+#timeline2 .quarters-header{
   display: flex;
-  position: relative;
-  justify-content: center;
-  border-top: 2px solid $grey-border;
+  justify-content: space-around;
 }
 
-.status:before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  width: 0px;
-  height: 10px;
-  background-color: $grey-border;
-  border: 1px solid $grey-border;
-  border-radius: 10px;
+#timeline2 .t-year .quarters-header .name {
+  flex-basis: 20%;    
 }
 
-li.year .status:before {
-  width: 10px;
+#timeline2 .t-year t-quarter p {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 
-.status.hover:before {
-  background-color: $guardian-orange;
-  border-color: $guardian-orange;
-  border-radius: 0px;
-  width: 2px;
-  height: 12px;
+#timeline2 .quarters {
+  flex-basis: 80%;
+  display: none;
+  justify-content: space-around;
+  font-weight: auto;
+}
+
+#timeline2 .t-year.active .quarters {
+  display: flex;
+}
+
+#timeline2 .t-quarter {
+  flex-basis: 100%;
+  color: $grey-for-text;
+}
+#timeline2 .t-quarter.active {
+  flex-basis: 100%;
+  color: $violet;
+}
+
+#timeline2 .t-year .events {
+  display: none;
+  min-height: 60px;
+  max-height: 60px;
+  height: 60px;
+  overflow: scroll;
+}
+
+#timeline2 .t-year.active .events {
+  display: block;
+  text-align: left;
+  margin-left: 1em;
+}
+
+.event {
+    display:none;
+    max-width: 50ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $grey-black;
+}
+
+.event.active {
+    display: block;
+}
+
+.event span.title {
+  white-space: nowrap;
+}
+
+.event span.title.active {
+  color: $violet;
+} 
+
+/* correct cursors */
+
+.t-quarter p:hover {
+    cursor: pointer;
+}
+
+.t-year .name p:hover {
+    cursor: pointer;
+}
+
+.event span.title:hover {
   cursor:pointer;
-}
-
-/* reset as not clickable */
-
-li.year .status.hover:before {
-  background-color: $grey-border; 
-  border-color: $grey-border;
-  border-radius: 10px;
-  width: 10px;
-  height: 10px;
-  cursor: auto;
-}
-
-
-.status.active:before {
-  top: -5px;
-  left: 50%;
-  width: 4px;
-  height: 2.5em;
-  background-color: $guardian-blue;
-  border: 0px;
-  border-radius: 0px;
-}
-
-.status.active.hover:before {
-  background-color: $guardian-blue; /* reset */
 }
 
 .card {
@@ -145,7 +169,7 @@ li.year .status.hover:before {
 }
 
 .card .header{
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: bold;
   color: white; 
   background-color: $guardian-blue;
@@ -164,7 +188,7 @@ li.year .status.hover:before {
 }
 
 .card h2{
-  font-size: 1em;
+  font-size: 0.9em;
   font-style: bold;
   color: #535c63; /* between black and nice grey */ 
 }
