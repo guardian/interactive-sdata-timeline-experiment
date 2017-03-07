@@ -11,7 +11,7 @@ export async function render() {
             { 
                 when: { month: 'Jul', year: '2013'},
                 isActive: true,
-                title: 'Discovery that 90% of staff are on zero hour contracts',
+                title: '90% of Sports Direct staff are on zero hour contracts',
                 summary: 'Sports Direct\'s entire 20,000 part-time workforce are employed on zero-hour contracts at a time when 2,000 full-time staff are about to cash in bonuses of up to £100,000.',
                 who: ['Mike Ashley', 'Labour Party', 'The Guardian'],
                 articles:[
@@ -122,20 +122,20 @@ export async function render() {
             },
             { 
               when: { month: 'Sep', year: '2015'},
-              title: 'Unite Union protest "disckenian practices"',
+              title: 'Unite Union protest "dickensian practices"',
               summary: 'Sports Direct has insisted it is “not operating Dickensian practices”, in the face of growing shareholder unrest at Mike Ashley’s sportswear retailer.The company, which has gained notoriety for keeping 20,000 staff on zero-hours contracts and making Ashley a billionaire, robustly defended its treatment of workers at its annual shareholder meeting after strong criticism from activist investor groups.',
               who: ['Unite'],
               articles:[
                     {
                     category: "News",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/business/2015/sep/09/sports-direct-investors-revolt-against-chairman-and-pay-policy', when: '09/09'}
+                        {title: 'Sports Direct denies \'Dickensian practices\' in face of investor revolt', link: 'https://www.theguardian.com/business/2015/sep/09/sports-direct-investors-revolt-against-chairman-and-pay-policy', when: '09/09'}
                      ]
                     },
                     {
                     category: "Opinions",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/commentisfree/2015/sep/08/the-guardian-view-on-sports-direct-big-british-capitalism-at-its-grubbiest', when: '08/09'}
+                        {title: 'Big British capitalism at its grubbiest', link: 'https://www.theguardian.com/commentisfree/2015/sep/08/the-guardian-view-on-sports-direct-big-british-capitalism-at-its-grubbiest', when: '08/09'}
                       ]
                     }
                 ]
@@ -156,14 +156,14 @@ export async function render() {
             },
             { 
               when: { month: 'Oct', year: '2015'},
-              title: 'David Forsey charged over Ayreshite redundancies',
+              title: 'David Forsey charged over Ayreshire redundancies',
               summary: 'David Forsey, the chief executive of Sports Direct, has been charged with a criminal offence relating to the collapse of its fashion retailer USC.',
               who: ['David Forsey'],
               articles:[
                     {
                     category: "News",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/business/2015/oct/09/sports-direct-chief-executive-david-forsey-charged-usc-administration', when: '09/10'}
+                        {title: 'Sports Direct chief executive charged over USC administration', link: 'https://www.theguardian.com/business/2015/oct/09/sports-direct-chief-executive-david-forsey-charged-usc-administration', when: '09/10'}
                      ]
                     }
                 ]
@@ -177,20 +177,20 @@ export async function render() {
                     {
                     category: "News",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/business/2015/dec/09/how-sports-direct-effectively-pays-below-minimum-wage-pay', when: '09/12'},
-                        {title: '', link: 'https://www.theguardian.com/business/2015/dec/09/sports-direct-staff-shirebrook-strikes-policy-sick-leave', when: '09/12'}
+                        {title: 'How Sports Direct effectively pays below minimum wage', link: 'https://www.theguardian.com/business/2015/dec/09/how-sports-direct-effectively-pays-below-minimum-wage-pay', when: '09/12'},
+                        {title: 'Sports Direct staff scared to take time off with sick children', link: 'https://www.theguardian.com/business/2015/dec/09/sports-direct-staff-shirebrook-strikes-policy-sick-leave', when: '09/12'}
                      ]
                     },
                     {
                     category: "Analysis",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/football/2015/dec/09/mike-ashley-sports-direct-tycoon-empire-profile', when: '09/12'}
+                        {title: 'Tthe ins and outs of Sports Direct tycoon\'s empire', link: 'https://www.theguardian.com/football/2015/dec/09/mike-ashley-sports-direct-tycoon-empire-profile', when: '09/12'}
                      ]
                     },
                     {
                     category: "Opinions",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/business/2015/dec/11/sports-direct-is-a-reflection-of-the-modern-british-economy', when: '11/12'}
+                        {title: 'Sports Direct is a reflection of the modern British economy', link: 'https://www.theguardian.com/business/2015/dec/11/sports-direct-is-a-reflection-of-the-modern-british-economy', when: '11/12'}
                      ]
                     }
                 ]
@@ -204,13 +204,79 @@ export async function render() {
                     {
                     category: "News",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/business/2015/dec/09/how-sports-direct-effectively-pays-below-minimum-wage-pay', when: '09/12'}
+                        {title: 'Mike Ashley to oversee review of agency staff\'s conditions', link: 'https://www.theguardian.com/business/2015/dec/18/sports-direct-mike-ashley-to-oversee-review-of-agency-workers-conditions', when: '18/12'}
                      ]
                     },
                     {
                     category: "Analysis",
                     data: [
-                        {title: '', link: 'https://www.theguardian.com/business/2015/dec/18/sports-direct-accusations-workers-pay-conditions', when: '18/12'}
+                        {title: 'Sports Direct responds to accusations over warehouse workers', link: 'https://www.theguardian.com/business/2015/dec/18/sports-direct-accusations-workers-pay-conditions', when: '18/12'}
+                     ]
+                    }
+                ]
+            },
+            { 
+            when: { month: 'Jan', year: '2016'},
+              title: 'Sports Direct pledges £10m towards staff pay rise',
+              summary: 'Sports Direct has bowed to criticism of its working conditions by pledging £10m towards a staff pay rise, but Britain’s largest trade union dismissed the response to Guardian revelations over controversial employment practices at the retailer as a “PR stunt”.',
+              who: ['Mike Ashley', 'Unite Union'],
+              articles:[
+                    {
+                    category: "News",
+                    data: [
+                        {title: 'Sports Direct pledges £10m towards staff pay rise', link: 'https://www.theguardian.com/business/2015/dec/31/sports-direct-pledges-10m-towards-staff-pay-rise', when: '31/12'}
+                     ]
+                    },
+                    {
+                    category: "Opinion",
+                    data: [
+                        {title: 'Sports Direct pay pledge is far from enough', link: 'https://www.theguardian.com/business/2015/dec/31/sports-direct-pay-pledge-is-far-from-enough', when: '31/12'}
+                     ]
+                    }
+                ]
+            },
+            { 
+            when: { month: 'Jun', year: '2016'},
+              title: 'Ashley admits he had "lost control" of Sports Direct',
+              summary: '',
+              who: ['Mike Ashley', 'Labour Party', 'Conservatives Party'],
+              articles:[
+                    {
+                    category: "News",
+                    data: [
+                        {title: 'Mike Ashley admits Sports Direct has outgrown him', link: 'https://www.theguardian.com/business/live/2016/jun/07/mike-ashley-quizzed-by-mps-over-sports-direct-working-conditions-live-updates', when: '07/06'}
+                     ]
+                    },
+                    {
+                    category: "Analysis",
+                    data: [
+                        {title: 'The guardian view: unacceptable face of modern capitalism', link: 'https://www.theguardian.com/commentisfree/2016/jun/07/the-guardian-view-on-mike-ashley-unacceptable-face-of-modern-capitalism', when: '07/06'}
+                     ]
+                    },
+                    {
+                    category: "Opinion",
+                    data: [
+                        {title: 'Mike Ashley has pocketed millions from treating people like battery hens', link: 'https://www.theguardian.com/commentisfree/2016/jun/07/mike-ashley-sports-direct-owner-politicians', when: '07/06'}
+                     ]
+                    }
+                ]
+            },
+            { 
+            when: { month: 'Jul', year: '2016'},
+              title: 'Parliamentary review publishes failings',
+              summary: 'The billionaire retailer Mike Ashley has been running Sports Direct like a Victorian workhouse, building his success on a business model that treats workers “without dignity or respect”, a scathing parliamentary inquiry has found.',
+              who: ['Mike Ashley', 'Labour Party', 'Conservatives Party', 'David Cameron'],
+              articles:[
+                    {
+                    category: "News",
+                    data: [
+                        {title: 'Mike Ashley is running Sports Direct like \'Victorian workhouse\'', link: 'https://www.theguardian.com/business/2016/jul/22/mike-ashley-running-sports-direct-like-victorian-workhouse', when: '22/07'}
+                     ]
+                    },
+                    {
+                    category: "Opinion",
+                    data: [
+                        {title: 'Sports Direct pay pledge is far from enough', link: 'https://www.theguardian.com/business/2015/dec/31/sports-direct-pay-pledge-is-far-from-enough', when: '31/12'}
                      ]
                     }
                 ]
