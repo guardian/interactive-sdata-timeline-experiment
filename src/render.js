@@ -284,8 +284,9 @@ export async function render() {
         ]
     };
 
-    var id = 0;
+    /* add years */
 
+    var id = 0;
     data.events.map(event => {event.id = id++});
     data.events.map(event => {event.when.quarter = quarter(event.when.month) });
 
@@ -301,13 +302,38 @@ export async function render() {
         years.push({ name: year, events: eventsByYear[year] });
     }
 
+    /* first year is active */
     years[0].isActive = true;
 
     data.years = years;
 
+
+    /* add quarters */
+    data.years.map(year => {
+        const nonEmptyQuarters = year.events.reduce(eventToQuarters, []);
+        const quarters = [{name:'Q1'}, {name:'Q2'}, {name:'Q3'}, {name:'Q4'}]; 
+        quarters.map(q => q.nonEmpty = nonEmptyQuarters.includes(q.name));
+        year.quarters = quarters;
+    });   
+
+    /* first non empty quarters in first year is active */
+    const activeQuarter = data.years[0].quarters.filter(q => q.nonEmpty)[0];
+    activeQuarter.isActive = true;
+    const activeEvents = data.years[0].events.filter(event => event.when.quarter === activeQuarter.name);
+    activeEvents.forEach(event => {event.isActive = true;});
+    activeEvents[0].isTitleActive = true;
+    
+    //console.log(data);
+
     return template(data);
 }
 
+
+function eventToQuarters(quarters, event) {
+    const quarter = event.when.quarter;
+    quarters.push(quarter);
+    return quarters;
+} 
 
 function quarter(month) {
     switch (month) {

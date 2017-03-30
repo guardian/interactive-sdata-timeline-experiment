@@ -7,24 +7,19 @@
       <div class="quarters-header">
       <div class="name"> <p>{{name}}</p> </div>
       <div class="quarters">
-      <div {{#if isActive}} class="t-quarter active" {{else}} class="t-quarter" {{/if}} data-quarter="Q1">
-        <p>Q1</p>
+      {{#each quarters}}
+      <div {{#if isActive}} class="t-quarter active" {{else}} class="t-quarter" {{/if}} data-quarter="{{name}}" data-nonempty="{{nonEmpty}}">
+        <p>{{name}}</p>
       </div>
-      <div class="t-quarter" data-quarter="Q2">
-        <p>Q2</p>
-      </div>
-      <div class="t-quarter" data-quarter="Q3">
-        <p>Q3</p>
-      </div>
-      <div class="t-quarter" data-quarter="Q4">
-        <p>Q4</p>
-      </div>
+      {{/each}}
       </div>
       </div>
       <div class="events">
          {{#each events}}
          {{#if true}}
-             <div class="event" data-quarter="{{when.quarter}}"> <span class="title" id="{{id}}">• {{title}}</span></div>
+             <div {{#if isActive}} class="event active" {{else}} class="event" {{/if}} data-quarter="{{when.quarter}}"> 
+                <span {{#if isTitleActive}} class="title active" {{else}} class="title" {{/if}} id="{{id}}">• {{title}}</span>
+            </div>
          {{/if}}
          {{/each}}
      </div>

@@ -18,14 +18,14 @@ $$(document, '#timeline2 .t-year').forEach(element => {
         if(previous !== newone) {
             previous.classList.remove('active');
             newone.classList.add('active');
-            const quarter = $$(document, '.t-year.active .t-quarter')[0];
-            /* check cross-browsers click */
+            const quarter = $$(document, '.t-year.active .t-quarter[data-nonempty="true"]')[0];
+            /* note for later: check cross-browsers click */
             quarter.click();
         }
     });
 });
 
-$$(document, '#timeline2 .t-quarter').forEach(element => {
+$$(document, '#timeline2 .t-quarter[data-nonempty="true"]').forEach(element => {
     element.addEventListener('click', (event) => { 
         const previous = $(document, '#timeline2 .t-quarter.active');
         
